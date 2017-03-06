@@ -71,4 +71,16 @@ Every parameters are optional, if so,
 
 N.B : It is also possible to use an hash as a starting point.  
 
+#### `blockchain.validateBlockchain(superblockNumber, startingHeight)`
+
+Will validate the blockchain from a specified startingHeight (default will be the last block height) to a set number of superblocks (default is 1).  
+If will first validate all block from the starting height to the previous known superblock.  
+Then it will validate a superblockNumber of superblock.  
+
+For instance, let's assume the given parameters : `validateBlockchain(2, 632000)`  
+Knowing that the two previous superblocks are at height 631408 and 614792.  
+It will validate the blockchain on multiple checks : 
+- First, it will validate headers using DGW from 632000 to previous superblock (631408)
+- Then it will validate headers between two superblocks : 631408 to 614792. 
+- Finally it will validate the superblock 614792 it self (from 598176 to 614792)  
 
