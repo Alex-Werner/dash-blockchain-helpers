@@ -14,13 +14,13 @@ Dash-blockchain-helpers will provides you some utils and helpers in order to hel
 		- `npm install dash-blockchain-helpers`
 - Use it
 	```
-	const DBH = require('dash-blockchain-helpers')
-    var config = {
-        insightAPI:{
-            uri:"http://192.168.0.15:3001/insight-api-dash"
-        }
-    }
-	var blockchain = new DBH(config)
+	const DBH = require('dash-blockchain-helpers')    
+    var config = {   
+        insightAPI:{   
+            uri:"http://192.168.0.15:3001/insight-api-dash"   
+        }   
+    }   
+	var blockchain = new DBH(config)   
 	```
 
 ### Exemple : 
@@ -40,3 +40,15 @@ From an height integer will return it's equivalent hash.
 #### `blockchain.getHeightFromHash(hash)`
 
 From an hash hexstring will return it's equivalent height.
+
+#### `blockchain.getLastBlockHash()`
+
+Will return the last block hash.
+
+#### `blockchain.getLastBlockHeight()`
+
+Will return the last block height.
+
+#### `blockchain.getStatus()`
+
+Will return basic status information from the API.
