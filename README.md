@@ -52,3 +52,23 @@ Will return the last block height.
 #### `blockchain.getStatus()`
 
 Will return basic status information from the API.
+
+### `blockchain.expectNextDifficulty()`
+
+Will return the expected next difficulty (bits) given the last 25 headers.  
+
+### `blockchain.retrieveBlockHeaders([startingHeight,[numberOfBlockheaders,[direction,]]])`
+
+Will return an array of a defined number of block headers from a starting point (height).   
+- startingHeight will be a Number representing the height from which you want to fetch the data.  
+- numberOfBlockheaders is the number of continious block headers you want to fetch from that starting point  
+- direction is an integer representing the direction of headers to fetch, where 1 is forward and -1 backward.  
+
+Every parameters are optional, if so,  
+- startingHeight will be 0  
+- numberOfBlock will be 25  
+- direction will be 1.   
+
+N.B : It is also possible to use an hash as a starting point.  
+
+

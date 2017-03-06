@@ -4,6 +4,7 @@
   "description": "Dash-blockchain-helpers will provides you some utils and helpers in order to help you doing simple stuff.",
   "main": "index.js",
   "dependencies": {
+    "dark-gravity-wave-js": "github:alex-werner/dark-gravity-wave-js",
     "khal": "^1.8.0",
     "request": "^2.80.0"
   },
