@@ -84,3 +84,18 @@ It will validate the blockchain on multiple checks :
 - Then it will validate headers between two superblocks : 631408 to 614792. 
 - Finally it will validate the superblock 614792 it self (from 598176 to 614792)  
 
+
+#### `blockchain.getNextSuperblockList([height,[nbOfSuperblocks]])`
+
+Will return the defined number of superblocks from a defined height.   
+If no parameters are given it will return the next superblock from the last generated block  
+If only height parameter are given, it will then return the next superblock from this starting point.  
+
+
+#### `blockchain.getPreviousSuperblockList([height,[nbOfSuperblocks]])`
+
+Will return the defined number of superblocks from the defined height.  
+If no parameters are given it will return all superblocks heights that has been generated from genesis to current block.  
+If only height parameter are given, it will then return the solely previous superblock from that starting point  
+
+
