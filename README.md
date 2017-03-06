@@ -37,7 +37,7 @@ async function test(){
 test();
 ```
 
-If you are using previous version of node, mind about polyfill like (Asyncawait)[https://github.com/yortus/asyncawait]   
+If you are using previous version of node, mind about polyfill like [Asyncawait](https://github.com/yortus/asyncawait)   
 
 ### Exemple : 
 
