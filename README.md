@@ -22,6 +22,22 @@ var config = {
 }   
 var blockchain = new DBH(config)   
 ```
+- Enjoy promises! 
+
+### I hate promises, is there a fun way to use it ? 
+
+Yes ! From NodeJS 7.6, you are able to use await/async superfeatures.  
+It will allow you do to stuff like theses :   
+
+```
+async function test(){
+    var superblockList = await blockchain.getPreviousSuperblockList();
+    console.log(superblockList);
+}
+test();
+```
+
+If you are using previous version of node, mind about polyfill like (Asyncawait)[https://github.com/yortus/asyncawait]   
 
 ### Exemple : 
 
