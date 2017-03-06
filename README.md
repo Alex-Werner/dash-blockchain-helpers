@@ -53,11 +53,11 @@ Will return the last block height.
 
 Will return basic status information from the API.
 
-### `blockchain.expectNextDifficulty()`
+#### `blockchain.expectNextDifficulty()`
 
 Will return the expected next difficulty (bits) given the last 25 headers.  
 
-### `blockchain.retrieveBlockHeaders([startingHeight,[numberOfBlockheaders,[direction,]]])`
+#### `blockchain.retrieveBlockHeaders([startingHeight,[numberOfBlockheaders,[direction,]]])`
 
 Will return an array of a defined number of block headers from a starting point (height).   
 - startingHeight will be a Number representing the height from which you want to fetch the data.  
