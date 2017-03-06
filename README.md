@@ -13,15 +13,15 @@ Dash-blockchain-helpers will provides you some utils and helpers in order to hel
 	- From NPM : 
 		- `npm install dash-blockchain-helpers`
 - Use it
-	```
-	const DBH = require('dash-blockchain-helpers')    
-    var config = {   
-        insightAPI:{   
-            uri:"http://192.168.0.15:3001/insight-api-dash"   
-        }   
+```
+const DBH = require('dash-blockchain-helpers')    
+var config = {   
+    insightAPI:{   
+        uri:"http://192.168.0.15:3001/insight-api-dash"   
     }   
-	var blockchain = new DBH(config)   
-	```
+}   
+var blockchain = new DBH(config)   
+```
 
 ### Exemple : 
 
