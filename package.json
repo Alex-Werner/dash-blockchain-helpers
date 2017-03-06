@@ -1,0 +1,24 @@
+{
+  "name": "dash-blockchain-helpers",
+  "version": "1.0.0",
+  "description": "Dash-blockchain-helpers will provides you some utils and helpers in order to help you doing simple stuff.",
+  "main": "index.js",
+  "dependencies": {
+    "khal": "^1.8.0",
+    "request": "^2.80.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alex-Werner/dash-blockchain-helpers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alex-Werner/dash-blockchain-helpers/issues"
+  },
+  "homepage": "https://github.com/Alex-Werner/dash-blockchain-helpers#readme"
+}
