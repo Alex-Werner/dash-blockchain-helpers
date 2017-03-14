@@ -76,7 +76,7 @@ From an height integer will return it's equivalent hash.
 
 From an hash hexstring will return it's equivalent height.
 
-#### `blockchain.getLastBlockHash()`
+#### `blockchain.getLastBlockHash()` (aliases : `getTip()`, `getBest()`)
 
 Will return the last block hash.
 
@@ -84,7 +84,7 @@ Will return the last block hash.
 
 Will return the last block height.
 
-#### `blockchain.getStatus()`
+#### `blockchain.getStatus()` (alias: `getInfo()` )
 
 Will return basic status information from the API.
 
