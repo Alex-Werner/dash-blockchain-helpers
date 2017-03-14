@@ -68,8 +68,13 @@ blockchainInsightAPI.getBlockFromHash(hash).then(function (block) {console.log(b
  */
 
 /* - Get Last Height */
- // let hash = "000000000016aa0ede55a3d77e9a545eb928e68f8ef70807f93d06171b49dedd";*/
  // blockchainRPC.getLastBlockHeight().then(function (block) {console.log(block);})
  // blockchainInsightAPI.getLastBlockHeight().then(function (block) {console.log(block);})
- 
- 
+// 
+// /* - retrieveBlockHeaders */
+// blockchainRPC.retrieveBlockHeaders(614791,25,-1).then(function (headers) {console.log(headers);})
+// blockchainInsightAPI.retrieveBlockHeaders(614791,25,-1).then(function (headers) {console.log(headers);})
+
+// /* - expectNextDifficulty */
+// blockchainRPC.expectNextDifficulty().then(function (headers) {console.log(headers);})
+// blockchainInsightAPI.expectNextDifficulty().then(function (headers) {console.log(headers);})
