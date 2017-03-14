@@ -75,8 +75,67 @@ const requesterJSON = {
         
         
     },
-    post: function (URL) {
+    post: function (options, data) {
+        return new Promise(function (resolve, reject) {
+            const _hostname = options.host;
+            const _path = options.path || '/';
+            const _port = options.port || 80;
+            const _req = http;
+            const _requestData = JSON.stringify(data);
+            
+            const post_options = {
+                hostname:_hostname,
+                path:_path,
+                port:_port,
+                method: 'POST',
+                headers: {
+                    'Content-Length': _requestData.length
+                }
+            };
+            if (options.auth) {
+                post_options.auth = (options.auth);
+            }
+            let request = _req.request(post_options, function (response) {
+                const statusCode = response.statusCode;
+                if (statusCode === 200) {
+                    response.setEncoding('utf8');
+                    let rawData = '';
+                    response.on('data', (chunk) => rawData += chunk);
+                    response.on('end', () => {
+                        try {
+                            let parsedData = JSON.parse(rawData);
+                            return resolve(parsedData);
+                        } catch (e) {
+                            return resolve(e.message);
+                        }
+                    });
+                } else if (statusCode == 302 || statusCode == 301) {
+                    //Redirection
+                    let newURL = response.headers.location;
+                    console.log("Redirect to", newURL);
+                    // throw("Moved to ",newURL)
+                    return resolve(requester.get(newURL));
+                } else if (statusCode === 404) {
+                    // throw("Unreachable domain", statusCode);
+                    return resolve(statusCode);
+                }
+                else {
+                    // throw("Got an statusCode", statusCode);
+                    return resolve(statusCode);
+                }
+            })
+                .on('error', function (e) {
+                    return reject(e);
+                });
+            request.setTimeout(timeout, function () {
+                request.abort();
+                //Gateway time-out
+                return resolve(504);
+            })
+            request.end(_requestData);
+            
         
+        });
     }
 };
 module.exports = requesterJSON;

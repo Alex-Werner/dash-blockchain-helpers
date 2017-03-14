@@ -4,7 +4,6 @@
 
 Dash-blockchain-helpers will provides you some utils and helpers in order to help you doing simple stuff.
 
-
 ### How To :
 - Install : 
 	- From github :
@@ -12,13 +11,33 @@ Dash-blockchain-helpers will provides you some utils and helpers in order to hel
 		- `npm install`
 	- From NPM : 
 		- `npm install dash-blockchain-helpers`
-- Use it
+- Use it by adding to config objects either : 
+	- insightAPI : 
+		- uri
 ```
 const DBH = require('dash-blockchain-helpers')    
 var config = {   
     insightAPI:{   
         uri:"http://192.168.0.15:3001/insight-api-dash"   
-    }   
+    }
+}   
+var blockchain = new DBH(config)   
+```
+- or : 
+	- dashRPC (require to have a dash node running as server mode): 
+		- user : The RPC server username
+		- password : The RPC server password
+		- port : The RPC server port (default to 9998)
+		- host : The RPC hostname (default to 127.0.0.1)
+```
+const DBH = require('dash-blockchain-helpers')    
+var config = {   
+    dashRPC:{
+	    user:'dash',
+	    password:'dash',
+	    port:9998,
+	    host:'127.0.0.1'
+    }
 }   
 var blockchain = new DBH(config)   
 ```
