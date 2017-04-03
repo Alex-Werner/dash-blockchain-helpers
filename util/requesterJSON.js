@@ -1,7 +1,7 @@
 const url = require('url');
 const http = require('http');
 const https = require('https');
-const timeout = 60 * 1000;//60 seconde timeout (time to get the response)
+const timeout = 10 * 1000;//60 seconde timeout (time to get the response)
 
 const requesterJSON = {
     prepareRequest: function (URL) {
