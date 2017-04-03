@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "dark-gravity-wave-js": "github:alex-werner/dark-gravity-wave-js",
+    "object-hash": "^1.1.7"
   },
   "devDependencies": {},
   "scripts": {
