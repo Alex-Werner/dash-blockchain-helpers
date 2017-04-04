@@ -80,11 +80,11 @@ const getAvailableAPIURIList = function (_knownNodes) {
  *      - Ask for the previous 25 block
  *      - Validate that the prev 25 block has a DGW which equivalent the 26th.
  *      - Verify that each of the API return the same value (if not, isolate the liar and remove from the list)
- * @return {Promise} - ListOfAPI
+ * @return {Promise} - validatedAPIList
  */
 const validateAPIList = function (availableAPIList) {
     return new Promise(async function (resolve, reject) {
-        let validMNList = [];
+        let validatedAPIList = [];
         let DBHs = [];
         let dataFromAPIs = [];
 
@@ -134,7 +134,7 @@ const validateAPIList = function (availableAPIList) {
         //seek for consensus
         if (Object.keys(listOfObjectHash).length == 0) {
             //Consensus found
-            validMNList = availableAPIList;
+            validatedAPIList = availableAPIList;
         } else {
             //Consensus not found, which is the biggest ?
             let biggest = 0, consensus = null;
@@ -146,11 +146,10 @@ const validateAPIList = function (availableAPIList) {
                 }
             }
             listOfObjectHash[consensus].filter(function (_APIIdx) {
-                validMNList.push(availableAPIList[_APIIdx]);
+                validatedAPIList.push(availableAPIList[_APIIdx]);
             })
         }
-
-        return resolve(validMNList);
+        return resolve(validatedAPIList);
     });
 };
 module.exports = function (knownNodes) {
